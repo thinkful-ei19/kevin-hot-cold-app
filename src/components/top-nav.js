@@ -7,14 +7,22 @@ export default function TopNav(props) {
         <nav>
             <ul className="clearfix">
                 <li>
-                    <a className="what" href="#">
+                    <a className="what"
+                        href="#"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            props.toggleInfoModal();
+                        }}>
                         What?
                     </a>
                 </li>
                 <li>
-                    <a className="new" href="#">
-                        + New Game
-                    </a>
+                    <a className="new"
+                        href="#"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            props.newGame();
+                        }}>+ New Game</a>
                 </li>
             </ul>
         </nav>

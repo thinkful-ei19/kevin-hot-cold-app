@@ -6,11 +6,29 @@ import InfoModal from './info-modal';
 import './header.css';
 
 export default function Header(props) {
-    return (
-        <header>
-            <TopNav />
-            {/* <InfoModal /> */}
-            <h1>HOT or COLD</h1>
-        </header>
-    );
+
+    if (!props.infoModal) {
+        return (
+            <header>
+                <TopNav
+                    newGame={() => props.newGame()}
+                    toggleInfoModal={() => props.toggleInfoModal()}
+                />
+                <h1>HOT or COLD</h1>
+            </header>
+        )
+    } else {
+        return (
+            <header>
+                <TopNav
+                    newGame={() => props.newGame()}
+                    toggleInfoModal={() => props.toggleInfoModal()}
+                />
+                <InfoModal 
+                    toggleInfoModal={() => props.toggleInfoModal()}
+                />
+                <h1>HOT or COLD</h1>
+            </header>
+        )
+    }
 };

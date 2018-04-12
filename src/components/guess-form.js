@@ -4,10 +4,12 @@ import './guess-form.css';
 
 export default function GuessForm(props) {
     return (
-        <form onSubmit={(event) => {
+        <form 
+        onSubmit={(event) => {
             event.preventDefault();
             let guessNumber = event.target.userGuess.value;
             props.enterGuess(guessNumber);
+            props.feedbackChange(guessNumber)
             event.target.userGuess.value = ''
         }}>
             <input 

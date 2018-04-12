@@ -9,6 +9,7 @@ export default function GuessSection(props) {
         <section>
             <h2 id="feedback">{props.feedback}</h2>
             <GuessForm
+                feedbackChange={(guessNumber) => props.feedbackChange(guessNumber)}
                 enterGuess={(guessNumber) => props.enterGuess(guessNumber)} 
             />
         </section>
